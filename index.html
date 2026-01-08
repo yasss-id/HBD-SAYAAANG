@@ -3,25 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Selamat Ulang Tahun Arum</title>
+<title>Selamat Ulang Tahun Arum 🤍</title>
 
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: linear-gradient(135deg, #ffb6c1, #ffd1dc);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   overflow-x: hidden;
-  text-align: center;
-  color: #5a1a2e;
 }
 
 .container {
-  max-width: 700px;
+  max-width: 360px;
   margin: 40px auto;
-  background: rgba(255,255,255,0.85);
-  padding: 30px 20px;
+  background: rgba(255,255,255,0.9);
+  padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 h1 {
@@ -31,47 +30,62 @@ h1 {
 
 h2 {
   margin-top: 0;
-  color: #b02a5b;
+  color: #555;
 }
 
 .stickers {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
+  gap: 10px;
+  margin: 15px 0;
 }
 
 .stickers img {
   width: 90px;
   height: 90px;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 15px;
   cursor: pointer;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
   transition: transform 0.3s;
 }
 
 .stickers img:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 p {
-  font-size: 16px;
-  line-height: 1.7;
-  margin: 15px 0;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  background: #d6336c;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #b92d5d;
 }
 
 footer {
-  margin-top: 25px;
-  font-size: 14px;
-  color: #7a2b4a;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #777;
 }
 
-/* Love jatuh */
+/* LOVE JATUH */
 .heart {
   position: fixed;
   top: -10px;
-  font-size: 22px;
+  font-size: 20px;
   animation: fall linear forwards;
 }
 
@@ -86,44 +100,52 @@ footer {
 
 <body>
 
-<audio autoplay loop>
-  <source src="musik.mp3" type="audio/mpeg">
-</audio>
-
 <div class="container">
   <h1>💖 Selamat Ulang Tahun 💖</h1>
   <h2>Arum Setiyawati</h2>
 
   <div class="stickers">
-    <img src="foto1.jpg" onclick="alert('Terima kasih sudah bertahan sejauh ini 🤍')">
-    <img src="foto2.jpg" onclick="alert('Kamu adalah alasan aku percaya cinta 💕')">
-    <img src="foto3.jpg" onclick="alert('Aku selalu bangga punya kamu 🌸')">
+    <img src="foto1.jpg" onclick="alert('Aku selalu bangga sama kamu 🤍')">
+    <img src="foto2.jpg" onclick="alert('Kamu lebih kuat dari yang kamu kira 💕')">
+    <img src="foto3.jpg" onclick="alert('Aku selalu ada buat kamu 🌸')">
   </div>
 
   <p>
     Di hari spesial ini, aku cuma mau kamu tahu satu hal:  
-    kamu itu sangat berarti.  
-    Semua lelahmu, semua perjuanganmu, semuanya tidak sia-sia 🤍
+    kamu itu berharga, kamu itu kuat, dan kamu pantas bahagia 🤍
   </p>
 
   <p>
-    Kalau suatu hari kamu capek, ingat ya…  
-    kamu tidak sendirian.  
-    Aku selalu ada, mendoakanmu, mendukungmu, dan percaya sama kamu 💞
+    Kalau suatu hari kamu lelah, ingat…  
+    kamu sudah bertahan sejauh ini bukan tanpa alasan.  
+    Pelan-pelan nggak apa-apa, yang penting jangan menyerah 💞
   </p>
 
   <p>
-    Teruslah hidup, teruslah bermimpi.  
-    Pelan tidak apa-apa, yang penting jangan berhenti.  
-    Dunia masih butuh senyummu, dan aku masih ingin berjalan bersamamu ❤️
+    Aku mungkin nggak sempurna,  
+    tapi perasaanku ke kamu selalu sungguh-sungguh.  
+    Terima kasih sudah menjadi rumah dan alasan aku tersenyum setiap hari 🤍
   </p>
+
+  <audio id="bgm" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="playBtn" onclick="playMusic()">▶️ Putar Musik</button>
 
   <footer>
-    — Dari aku yang selalu sayang dan bangga sama kamu
+    — Dari aku yang selalu sayang & bangga sama kamu 🤍
   </footer>
 </div>
 
 <script>
+function playMusic() {
+  const music = document.getElementById("bgm");
+  music.play();
+  document.getElementById("playBtn").style.display = "none";
+}
+
+/* LOVE JATUH */
 function createHeart() {
   const heart = document.createElement("div");
   heart.className = "heart";
@@ -136,7 +158,6 @@ function createHeart() {
     heart.remove();
   }, 6000);
 }
-
 setInterval(createHeart, 300);
 </script>
 
