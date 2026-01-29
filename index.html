@@ -101,9 +101,24 @@ footer {
   animation: fall linear forwards;
 }
 
+/* TULIP JATUH */
+.tulip {
+  position: fixed;
+  top: 10px;
+  font-size: 22px;
+  animation: fallTulip linear forwards;
+}
+
 @keyframes fall {
   to {
     transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+@keyframes fallTulip {
+  to {
+    transform: translateY(110vh) rotate(15deg);
     opacity: 0;
   }
 }
@@ -130,7 +145,7 @@ footer {
 <body>
 
 <div class="container">
-  <h1><span>💖</span> Selamat Ulang Tahun
+  <h1><span>💖</span> Selamat Ulang Tahun <span>💖</span></h1>
   <h2>Arum Setiyawati</h2>
 
   <div class="stickers">
@@ -215,6 +230,18 @@ function createHeart() {
   setTimeout(() => heart.remove(), 6000);
 }
 setInterval(createHeart, 300);
+
+/* TULIP JATUH */
+function createTulip() {
+  const tulip = document.createElement("div");
+  tulip.className = "tulip";
+  tulip.innerHTML = "🌷"; // emoji tulip pink
+  tulip.style.left = Math.random() * 100 + "vw";
+  tulip.style.animationDuration = (4 + Math.random() * 3) + "s";
+  document.body.appendChild(tulip);
+  setTimeout(() => tulip.remove(), 7000);
+}
+setInterval(createTulip, 600);
 </script>
 
 </body>
